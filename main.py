@@ -22,17 +22,18 @@ keyboard_finish = types.ReplyKeyboardMarkup().add(types.KeyboardButton("/start")
 # Welcome message
 @bot.message_handler(commands=["start"])
 def start(message):
-    keyboard_start = types.ReplyKeyboardMarkup() # клавиатура с кнопками
+    name = message.chat.first_name
+    keyboard_start = types.ReplyKeyboardMarkup()  # клавиатура с кнопками
     keyboard_start.add(types.KeyboardButton("1⃣"))
     keyboard_start.add(types.KeyboardButton("2️⃣"))
     keyboard_start.add(types.KeyboardButton("3️⃣"))
 
     bot.send_message(
         message.chat.id,
-        "Начнем игру!\nВыбери уровень сложности игры: \n"
-            "1⃣ уровень: угадать цвет масти\n"
-            "2️⃣ уровень: угадать масть карты\n"
-            "3️⃣ уровень: угадать карту\n",
+        f"{name}, начнем игру!\nВыбери уровень сложности игры: \n"
+        "1⃣ уровень: угадать цвет масти\n"
+        "2️⃣ уровень: угадать масть карты\n"
+        "3️⃣ уровень: угадать карту\n",
         reply_markup=keyboard_start)  # вернуть клавиатуру с кнопками выбора
 
     bot.register_next_step_handler(message, answer_level)
