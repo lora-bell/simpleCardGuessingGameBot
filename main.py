@@ -76,8 +76,8 @@ def answer_level(message):
             bot.register_next_step_handler(message, answer_card_level_2, card_number, card_suit)
 
         else:
-            buttons = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Валет", "Дама", "Король", "Туз"]
-            keyboard_level_3 = types.ReplyKeyboardMarkup()
+            buttons = ["Валет", "Дама", "Король", "Туз"]
+            keyboard_level_3 = types.ReplyKeyboardMarkup().row("2", "3", "4", "5", "6", "7", "8", "9", "10")
             for button in buttons:
                 keyboard_level_3.add(button)
 
