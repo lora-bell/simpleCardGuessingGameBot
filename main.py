@@ -1,11 +1,12 @@
 from telebot import TeleBot
 from telebot import types
 from random import choice
+from config import TOKEN
 
 '''
     Получить TOKEN можно в телеграмм-боте @BotFather
 '''
-TOKEN = "PLACE_FOR_YOUR_TOKEN"
+TOKEN = TOKEN
 COLOR_SUIT = {
     "♠": "⚫",  # black
     "♥": "🔴",  # red
